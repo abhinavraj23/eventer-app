@@ -293,37 +293,38 @@ public class SignInSignUp extends AppCompatActivity {
 
         ValidateReg vr=new ValidateReg();
        // Controller
-        vr.validateRegJSON(regNo,pswd,this, new ServerCallback() {
-            @Override
-            public void onSuccessResult(JSONObject result) {
-                try {
-                    String authenticated="false";
-                    if (result.has("Authenticated")) {
-                        authenticated = result.optString("Authenticated");
-                    }
-
-                    String userName = result.optString("Student Name");
-
-                    if (authenticated.equalsIgnoreCase("false"))
-                    {
-                        Snackbar snackbar = Snackbar
-                                .make(coordinatorLayout, "INVALID CREDENTIALS", Snackbar.LENGTH_LONG);
-                        snackbar.show();
-                    }
-                    else {
-                    //    Toast.makeText(SignInSignUp.this, "Auth"+userName, Toast.LENGTH_SHORT).show();
-                        createUser(email,pswd,userName);
-                   }
-                }
-                catch (Exception e) {}
-                toggleProgressVisibility();
-            }
-
-            @Override
-            public void onFailure() {
-                toggleProgressVisibility();
-            }
-        });
+        createUser(email,pswd,"Abhinav Raj");
+//        vr.validateRegJSON(regNo,pswd,this, new ServerCallback() {
+//            @Override
+//            public void onSuccessResult(JSONObject result) {
+//                try {
+//                    String authenticated="false";
+//                    if (result.has("Authenticated")) {
+//                        authenticated = result.optString("Authenticated");
+//                    }
+//
+//                    String userName = result.optString("Student Name");
+//
+//                    if (authenticated.equalsIgnoreCase("false"))
+//                    {
+//                        Snackbar snackbar = Snackbar
+//                                .make(coordinatorLayout, "INVALID CREDENTIALS", Snackbar.LENGTH_LONG);
+//                        snackbar.show();
+//                    }
+//                    else {
+//                    //    Toast.makeText(SignInSignUp.this, "Auth"+userName, Toast.LENGTH_SHORT).show();
+//                        createUser(email,pswd,userName);
+//                   }
+//                }
+//                catch (Exception e) {}
+//                toggleProgressVisibility();
+//            }
+//
+//            @Override
+//            public void onFailure() {
+//                toggleProgressVisibility();
+//            }
+   //     });
     }
     // [end create user with email and password ]
 
