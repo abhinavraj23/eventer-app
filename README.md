@@ -7,8 +7,6 @@
 Morden, social and minimalistic event management app which allows to set up events 
 and conduct registrations in no time.
 
-**[Install on Google Play](https://play.google.com/store/apps/details?id=com.eventer.app)**
-
 <h2>Features</h2>
 
 With the app, organizers can:
